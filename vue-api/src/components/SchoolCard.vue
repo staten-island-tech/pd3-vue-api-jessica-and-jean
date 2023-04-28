@@ -6,10 +6,19 @@
 </template>
 
 <script setup>
-const props = {
+const props = defineprops({
   school: Object,
   id: Number
-}
+})
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+.card {
+  width: 28%;
+  height: 500px;
+  background-color: aliceblue;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+}
+</style>

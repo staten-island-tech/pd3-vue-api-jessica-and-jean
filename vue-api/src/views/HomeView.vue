@@ -1,10 +1,17 @@
 <template>
-  <div></div>
+  <div class="container">
+    <SchoolCard
+      v-for="(school, index) in schools"
+      :key="schools.schoolname"
+      :id="index + 1"
+      :schools="school"
+    />
+  </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import ScoresCard from '../components/ScoresCard.vue'
+import SchoolCard from '../components/SchoolCard.vue'
 const schools = ref('')
 
 async function getApData() {
