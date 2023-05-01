@@ -1,6 +1,6 @@
 <template>
+  <h1>AP Data</h1>
   <div class="container">
-    <h1>AP Data</h1>
     <SchoolCard
       v-for="schools in schools"
       :key="schools"
@@ -38,5 +38,9 @@ onMounted(() => {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+
+h1 {
+  text-align: center;
 }
 </style>
