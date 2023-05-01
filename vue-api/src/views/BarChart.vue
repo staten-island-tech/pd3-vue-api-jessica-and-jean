@@ -1,4 +1,5 @@
-+<template>
+<template>
+  <h1>Passing Scores</h1>
     <div class="chart">
       <Bar v-if="loaded" :data="chartData" :options="chartOptions" />
     </div>
@@ -54,11 +55,11 @@ export default {
       let data = await res.json()
       const Twenty = data.filter((schools) => schools.number_of_exams_with_scores_3_4_or_5 < 20)
       this.chartData.datasets[0].data.push(Twenty.length)
-      const thirtyfifty = data.filter((schools) => schools.number_of_exams_with_scores_3_4_or_5 < 51)
+      const thirtyfifty = data.filter((schools) => (schools.number_of_exams_with_scores_3_4_or_5 > 21) && (schools.number_of_exams_with_scores_3_4_or_5 < 51))
       this.chartData.datasets[0].data.push(thirtyfifty.length)
-      const sixtyeighty = data.filter((schools) => schools.number_of_exams_with_scores_3_4_or_5 < 81)
+      const sixtyeighty = data.filter((schools) => (schools.number_of_exams_with_scores_3_4_or_5 > 50 ) && (schools.number_of_exams_with_scores_3_4_or_5 < 81))
       this.chartData.datasets[0].data.push(sixtyeighty.length)
-      const ninetyhundred = data.filter((schools) => schools.number_of_exams_with_scores_3_4_or_5 < 101)
+      const ninetyhundred = data.filter((schools) => (schools.number_of_exams_with_scores_3_4_or_5 < 80) && (schools.number_of_exams_with_scores_3_4_or_5 < 101))
       this.chartData.datasets[0].data.push(ninetyhundred.length)
       const overhundred = data.filter((schools) => schools.number_of_exams_with_scores_3_4_or_5 > 100)
       this.chartData.datasets[0].data.push(overhundred.length)
@@ -72,6 +73,10 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  text-align: center;
+}
+
 h2 {
   color: #7a6e63;
   font-size: 2rem;
@@ -86,8 +91,7 @@ h2:hover {
 .chart {
   margin-left: 80%;
   flex-wrap: wrap;
-  justify-content: center;
-  display: flex;
+  align-self: center;
   margin: 2%;
   height: 500;
   width: 1000px;

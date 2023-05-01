@@ -27,12 +27,14 @@ export default {
 .card {
   width: 28%;
   height: 500px;
-  background-color: aliceblue;
+  background-color: rgb(222, 197, 255);
   margin: 30px 0;
   display: flex;
   flex-direction: column;
+  border-radius: 25px;
 }
 .words {
   margin-left: 10px;
+  text-align: center;
 }
 </style>

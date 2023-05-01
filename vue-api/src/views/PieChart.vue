@@ -1,4 +1,5 @@
 <template>
+  <h1>Test Takers</h1>
     <div class="chart2">
       <Pie v-if="loaded" :options="chartOptions" :data="chartData" />
     </div>
@@ -55,17 +56,17 @@
         let data = await res.json()
         const one = data.filter((schools) => schools.ap_test_takers_ < 20)
         this.chartData.datasets[0].data.push(one.length)
-        const two = data.filter((schools) => schools.ap_test_takers_ < 51)
+        const two = data.filter((schools) => (schools.ap_test_takers_ >19) && (schools.ap_test_takers_ < 51))
         this.chartData.datasets[0].data.push(two.length)
-        const three = data.filter((schools) => schools.ap_test_takers_ < 81)
+        const three = data.filter((schools) => (schools.ap_test_takers_ > 51) && (schools.ap_test_takers_ < 81))
         this.chartData.datasets[0].data.push(three.length)
-        const four = data.filter((schools) => schools.ap_test_takers_ < 101)
+        const four = data.filter((schools) => (schools.ap_test_takers_ < 80) && (schools.ap_test_takers_ < 101))
         this.chartData.datasets[0].data.push(four.length)
-        const five = data.filter((schools) => schools.ap_test_takers_ < 131)
+        const five = data.filter((schools) => (schools.ap_test_takers_ < 100) && (schools.ap_test_takers_ < 131))
         this.chartData.datasets[0].data.push(five.length)
-        const six = data.filter((schools) => schools.ap_test_takers_ < 151 )
+        const six = data.filter((schools) => (schools.ap_test_takers_ < 130 ) && (schools.ap_test_takers_ < 151))
         this.chartData.datasets[0].data.push(six.length)
-        const seven = data.filter((schools) => schools.ap_test_takers_ < 181)
+        const seven = data.filter((schools) => (schools.ap_test_takers_ < 150) && (schools.ap_test_takers_ < 181))
         this.chartData.datasets[0].data.push(seven.length)
         const eight = data.filter((schools) => schools.ap_test_takers_ > 181)
         this.chartData.datasets[0].data.push(eight.length)
@@ -79,6 +80,9 @@
   </script>
   
   <style scoped>
+  h1 {
+    text-align: center;
+  }
   h2 {
     color: #7a6e63;
     font-size: 2rem;
