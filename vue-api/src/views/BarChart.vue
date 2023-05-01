@@ -40,7 +40,7 @@ export default {
       loaded: false,
       chartData: {
         labels: ['<20', '21-50', '51-80', '81-100', '101+'],
-        datasets: [{ lavel: 'Test Takers In Each School', data: [] }]
+        datasets: [{ label: 'Test Takers In Each School', data: [] }]
       },
       chartOptions: {
         responsive: true,
