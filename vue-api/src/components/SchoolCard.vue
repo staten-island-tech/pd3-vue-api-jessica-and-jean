@@ -1,15 +1,26 @@
 <template>
   <div class="card">
-    <h2>{{ schools.schoolname }}</h2>
-    <h3>{{ id }}</h3>
+    <h2 class="words">{{ dbn }}</h2>
+    <h3 class="words">{{ schoolname }}</h3>
+    <h3 class="words">{{ ap_test_takers_ }}</h3>
+    <h3 class="words">{{ total_exams_taken }}</h3>
+    <h3 class="words">{{ number_of_exams_with_scores_3_4_or_5 }}</h3>
   </div>
 </template>
 
-<script setup>
-const props = defineprops({
-  school: Object,
-  id: Number
-})
+<script>
+import { stringifyQuery } from 'vue-router';
+
+export default {
+  name: 'SchoolCard',
+  props: {
+    dbn: String,
+    schoolname: String,
+    ap_test_takers_: Number,
+    total_exams_taken: Number,
+    number_of_exams_with_scores_3_4_or_5: Number
+  }
+}
 </script>
 
 <style>
@@ -20,5 +31,8 @@ const props = defineprops({
   margin: 30px 0;
   display: flex;
   flex-direction: column;
+}
+.words {
+  margin-left: 10px;
 }
 </style>

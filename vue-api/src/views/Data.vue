@@ -1,10 +1,14 @@
 <template>
   <div class="container">
+    <h1>AP Data</h1>
     <SchoolCard
-      v-for="(school, index) in schools"
-      :key="schools.schoolname"
-      :id="index + 1"
-      :schools="school"
+      v-for="schools in schools"
+      :key="schools"
+      :dbn="schools.dbn"
+      :school="schools.schoolname"
+      :test_takers="schools.ap_test_takers_"
+      :exams_taken="schools.total_exams_taken"
+      :high_scores="schools.number_of_exams_with_scores_3_4_or_5"
     />
   </div>
 </template>
