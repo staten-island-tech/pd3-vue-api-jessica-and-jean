@@ -2,9 +2,9 @@
   <div class="card">
     <h2 class="words">{{ dbn }}</h2>
     <h3 class="words">{{ schoolname }}</h3>
-    <h3 class="words">{{ ap_test_takers_ }}</h3>
-    <h3 class="words">{{ total_exams_taken }}</h3>
-    <h3 class="words">{{ number_of_exams_with_scores_3_4_or_5 }}</h3>
+    <h3 class="words">Number of Test Takers:{{ ap_test_takers_ }}</h3>
+    <h3 class="words">Total Exams Taken:{{ total_exams_taken }}</h3>
+    <h3 class="words">Passing Scores:{{ number_of_exams_with_scores_3_4_or_5 }}</h3>
   </div>
 </template>
 

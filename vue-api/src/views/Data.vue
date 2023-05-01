@@ -6,9 +6,9 @@
       :key="schools"
       :dbn="schools.dbn"
       :school="schools.schoolname"
-      :test_takers="schools.ap_test_takers_"
-      :exams_taken="schools.total_exams_taken"
-      :high_scores="schools.number_of_exams_with_scores_3_4_or_5"
+      :ap_test_takers_="schools.ap_test_takers_"
+      :total_exams_taken="schools.total_exams_taken"
+      :number_of_exams_with_scores_3_4_or_5="schools.number_of_exams_with_scores_3_4_or_5"
     />
   </div>
 </template>

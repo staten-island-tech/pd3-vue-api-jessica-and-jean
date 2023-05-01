@@ -6,7 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: HomeView
     },
     {
@@ -14,6 +14,16 @@ const router = createRouter({
       name: 'Data',
       component: () => import('../views/Data.vue')
     },
+    {
+      path: '/BarChart',
+      name: 'BarChart',
+      component: () => import('../views/BarChart.vue')
+    },
+    {
+      path: '/PieChart',
+      name: 'PieChart',
+      component: () => import('../views/Piechart.vue')
+    }
   ]
 })
 
